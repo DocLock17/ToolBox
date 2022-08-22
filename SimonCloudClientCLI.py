@@ -14,7 +14,6 @@ if missing:
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', *missing])
 
 import requests
-# from time import sleep
 
 
 
