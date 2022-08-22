@@ -29,8 +29,8 @@ count = 1
 
 # Send REST input based requests in an infinite loop print response and increment count variable for tracking.
 while(True):
-  query = {query_field:input("Enter input to query field: {0} \n\n\t\t".format(query_field))}
-  print("\nSending request to: {0}".format(api_endpoint))
-  response = requests.put(api_endpoint, params=query)
-  print('\n ',count,"\t", response.json()[response_field], '\n')
+  query = {query_field:input("Enter input to query field: {0} \nFor request to: {1} \n".format(query_field, api_endpoint))}
+  print(query)
+  response = requests.put(api_endpoint, json=query)
+  print('\n ',count,"  ", response.json()[response_field], '\n')
   count+=1
