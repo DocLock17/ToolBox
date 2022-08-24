@@ -1,0 +1,181 @@
+
+<!DOCTYPE> 
+<HTML lang="en">
+    <HEAD>
+        <TITLE>Test Input</TITLE>
+        <SCRIPT LANGUAGE="JavaScript" ref="main.js">
+
+            // const urlLocation ='http://35.188.177.166:5000';
+
+            // const authHeaders = {Authorization: 'Bearer ', 'Content-Type': 'application/json'};
+
+            // window.postJson = function (url, data) {
+            // return fetch(urlLocation + url, {method: "POST", headers: authHeaders, body: JSON.stringify(data)}).then((res) => res.json());
+            // }
+            // window.getJson = function (url) { 
+            // return fetch(urlLocation + url, {method: "GET", headers: authHeaders}).then((res) => res.json()); 
+            // }
+            // window.deleteJson = function (url) { 
+            // return fetch(urlLocation + url, {method: "DELETE", headers: authHeaders}).then((res) => res.json()); 
+            // }
+            // // window.putJson = function (url) { 
+            // // return fetch(urlLocation + url, {method: "PUT", headers: authHeaders}).then((res) => res.json()); 
+            // // }
+            // window.putJson = function (url, data) {
+            //    return fetch(urlLocation + url, {method: "PUT", headers: authHeaders, body: JSON.stringify(data)}).then((res) => res.json());
+            // }
+            
+
+
+            // function testResults(form) {
+            //     var TestVar = form.inputbox.value;
+            //         alert("You typed: " + TestVar);
+            //     }
+                // const testMe = putJson(input+'hello').then( (res) => { return res; } );
+                // data = '{input:'+TestVar+'}'
+                // fetch('http://35.188.177.166:5000', {method: "PUT", body: JSON.stringify(data)})
+                //     .then(response => response.json())
+                //     .then(json => console.log(json))
+                //     ata = '{input:'+TestVar+'}'
+
+                // fetch('https://catfact.ninja/docs/api-docs.json', {
+                
+                // // // Almost working
+                // data = "{'input':'"+TestVar+"'}"
+                // console.log(JSON.stringify(data));
+                // // console.log(data)
+                // fetch('http://35.188.177.166:5000', {method: "PUT", input: TestVar}) 
+                //     // }, body: JSON.stringify(data)})
+                //     .then(response => response.text())
+                //     .then(json => console.log(json))
+                // //     // 
+            
+                
+                // Successful GET
+            //     let response = fetch('http://35.188.177.166:5000', {method: "GET",headers : { 
+            //         'Content-Type': 'application/json',
+            //         'Accept': 'application/json'
+            //         }
+            //     })
+            //         .then((response) => response.text())
+            //         .then(response => console.log(response))
+            //     console.log('Response Again is: ',response.promise.toString)
+                    
+            //         // alert("Simon Said: " + response.text());
+            //     // let field_group = response.text
+            //     // console.log(JSON.stringify(field_group))
+            //     // console.log(field_group)
+            //     // console.log(field_group)
+            //     // console.log(JSON.stringify(response.text()))
+            //     // console.log(JSON.stringify(field_group))
+            //     alert("You typed: " + TestVar);
+            //     // console.log(Object.getOwnPropertyNames(response))
+            //     // console.log(response.texts)
+            //     // console.log(JSON.stringify(response.data))
+            //     // alert("Simon Says: " + response.value);
+                
+
+            // }
+
+            // Example POST method implementation:
+                async function putData(parama) {
+                // Default options are marked with *
+                    // data = "{'input':'"+parama+"'}"
+                    data = '{"input": "'+parama+'"}'
+                    // data = "{input:"+parama+"}"
+                    // data = parama
+                    const response = await fetch('http://35.188.177.166:5000', {
+                        method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+                        mode: 'cors', // no-cors, *cors, same-origin
+                        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+                        headers: {
+                        'Content-Type': 'application/json', 
+                        'Accept': 'application/json'
+                        },
+                        redirect: 'follow', // manual, *follow, error
+                        referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+                        body: data
+                        // body: (data.json())
+                        // body: JSON.stringify(data) // body data type must match "Content-Type" header
+                        // body: data // body data type must match "Content-Type" header
+                        // body: JSON.parse(data)
+                    });
+                    console.log(data)
+                    console.log(response.body)
+                    // console.log(body)
+                    // console.log(response.json())
+                    return response.text(); // parses JSON response into native JavaScript objects
+                }
+
+                function testResults(form) {
+                var TestVar = form.inputbox.value;
+                    alert("You typed: " + TestVar);
+                    putData(TestVar)
+                    .then((data) => {
+                        console.log(data); // JSON data parsed by `data.json()` call
+                    });
+                }
+
+
+            // const formData = new FormData();
+            // // const fileField = document.querySelector('input[type="file"]');
+
+            // formData.append('input', 'hello');
+
+            // fetch('http://35.188.177.166:5000', {
+            //     method: 'PUT',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         'Accept': 'application/json'
+            //     },
+            //     body: formData
+            //     })
+            //     .then((response) => response.json())
+            //     .then((result) => {
+            //         console.log('Success:', result);
+            //     })
+            //     .catch((error) => {
+            //         console.error('Error:', error);
+            //     });
+
+
+
+            // const data = { input: 'Hello' };
+
+            // fetch('http://35.188.177.166:5000', {
+            //     method: 'PUT', // or 'PUT'
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         'Accept': 'application/json'
+            //     },
+            //     input: JSON.stringify(data),
+            //     })
+            //     .then((response) => response.json())
+            //     .then((data) => {
+            //         console.log('Success:', data);
+            //     })
+            //     .catch((error) => {
+            //         console.error('Error:', error);
+            // });
+
+        </SCRIPT>
+    </HEAD>
+    <BODY>
+        <FORM NAME="myform" ACTION="" METHOD="GET">Enter something in the box: <BR>
+            <INPUT TYPE="text" NAME="inputbox" VALUE=""><P>
+            <INPUT TYPE="button" NAME="button" Value="Click" onClick="testResults(this.form)">
+        </FORM>
+    </BODY>
+</HTML>
+
+
+<!-- 
+const headers = {'Content-Type':'application/json',
+                    'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}
+const response = {
+    statusCode: 200,
+    headers:headers,
+    body: JSON.stringify(X),
+};
+return response; -->
